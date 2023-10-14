@@ -6,7 +6,7 @@ def iniciar():
     Rect(0,0,400,400,relleno=gradiente('azulCieloClaro','azulAlica',inicio='superior'))
     Rect(0,320,400,320,relleno=gradiente('verde','verdeMilitar',inicio='inferior'))
 
-    #CASTILLO
+#CASTILLO
 
     castillo=Grupo(
         Rect(0,160,50,170,relleno=gradiente('grisOscuro','grisTurbio',inicio='izquierda')),

@@ -131,18 +131,18 @@ def dibujarVictoria():
     DragonMalo.centroX = 80
     DragonMalo.centroY = 190
 
-    #PRINCESA
-    Poligono(320, 280, 340, 240, 360, 280, relleno='violeta')
-    Circulo(340, 230, 15, relleno='caqui')
-    Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
-    Rect(325, 213, 30, 13, relleno='oro')
+#PRINCESA
+Poligono(320, 280, 340, 240, 360, 280, relleno='violeta')
+Circulo(340, 230, 15, relleno='caqui')
+Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
+Rect(325, 213, 30, 13, relleno='oro')
 
-    #PRINCIPE
-    Linea(235, 255, 210, 225, relleno='azulAceroClaro')
-    Linea(223, 255, 232, 242, relleno='azulAceroClaro')
-    Rect(240, 240, 20, 40, relleno='rojo')
-    Circulo(250, 225, 15, relleno='caqui')
-    Linea(235, 213, 261, 213, anchuraDeLinea=20, guion=True, relleno='oro')
-    Rect(235, 213, 30, 13, relleno='oro')
+#PRINCIPE
+Linea(235, 255, 210, 225, relleno='azulAceroClaro')
+Linea(223, 255, 232, 242, relleno='azulAceroClaro')
+Rect(240, 240, 20, 40, relleno='rojo')
+Circulo(250, 225, 15, relleno='caqui')
+Linea(235, 213, 261, 213, anchuraDeLinea=20, guion=True, relleno='oro')
+Rect(235, 213, 30, 13, relleno='oro')
 
 # cmu_graphics.run()
