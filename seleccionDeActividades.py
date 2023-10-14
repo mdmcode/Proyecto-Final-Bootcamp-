@@ -19,7 +19,7 @@ botonMates = Group(
     Rect(260,240,110,40,relleno='gainsBoro',borde='marrónCuero'),
     Rotulo('Matematicas',315,260,tamaño=14)
 )
-botonMates.nombre = 'Matematicas'
+botonMates.nombre = 'matematicas'
 
 botones = Group(botonGeneral, botonIngles, botonMates)
 
@@ -33,10 +33,7 @@ Linea(345,25,375,45,relleno='azulVioleta',anchuraDeLinea=6)
 #SIMBOLO SUMA
 Linea(40,320,40,354,relleno ='aguaMarinaMedio',anchuraDeLinea=7)
 Linea(25,337,55,337,relleno ='aguaMarinaMedio',anchuraDeLinea=7)
-#SIMBOLO DIVICION
-Circulo(365,315,5,relleno='azulGandul')
-Linea(345,318,367,32,relleno='azulGandul',anchuraDeLinea=5)
-Circulo(349,336,5,relleno='azulGandul')
+
 #SIMBOLO MULTIPLICACION
 Linea(146,130,170,160,relleno='coral',anchuraDeLinea=5)
 Linea(170,130,145,160,relleno='coral',anchuraDeLinea=5)

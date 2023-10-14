@@ -103,23 +103,23 @@ def dibujarBatalla():
         relleno=gradiente('carmesí', 'rojoOscuro')),
 
     ##BOCA
-    Óvalo(180, 200, 50, 20, relleno="rojoOscuro"),
-    Poligono(154, 200, 206, 200, 200, 214, 190, 222, 170, 222, 160, 215, relleno="rojoOscuro"),
-    Poligono(170, 222, 174, 205, 178, 222, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
-    Poligono(190, 222, 185, 205, 180, 222, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
-    Poligono(175, 190, 180, 210, 185, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
-    Poligono(195, 190, 190, 208, 184, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
-    Poligono(163, 190, 169, 210, 175, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
-    Poligono(190, 222, 196, 204, 200, 215, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
-    Poligono(169, 222, 163, 204, 160, 215, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
-    
+        Óvalo(180, 200, 50, 20, relleno="rojoOscuro"),
+        Poligono(154, 200, 206, 200, 200, 214, 190, 222, 170, 222, 160, 215, relleno="rojoOscuro"),
+        Poligono(170, 222, 174, 205, 178, 222, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+        Poligono(190, 222, 185, 205, 180, 222, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+        Poligono(175, 190, 180, 210, 185, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
+        Poligono(195, 190, 190, 208, 184, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
+        Poligono(163, 190, 169, 210, 175, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
+        Poligono(190, 222, 196, 204, 200, 215, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+        Poligono(169, 222, 163, 204, 160, 215, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+        
     ##OJOS
-    Poligono(150, 145, 170, 175, 145, 160, relleno=gradiente('azulGandul','rojoOscuro', 'negro')),
-    Poligono(210, 145, 190, 175, 215, 160, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
-    Poligono(216, 165, 190, 185, 220, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
-    Poligono(144, 165, 170, 185, 140, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
-    )
-    
+        Poligono(150, 145, 170, 175, 145, 160, relleno=gradiente('azulGandul','rojoOscuro', 'negro')),
+        Poligono(210, 145, 190, 175, 215, 160, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
+        Poligono(216, 165, 190, 185, 220, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
+        Poligono(144, 165, 170, 185, 140, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
+        )
+        
     DragonMalo.altura = 160
     DragonMalo.ancho = 160
     DragonMalo.centroX = 80
@@ -131,9 +131,9 @@ def dibujarBatalla():
     Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
     Rect(325, 213, 30, 13, relleno='oro')
 
-        #BARRAs DE VIDA
+    #BARRAs DE VIDA
 
-        #PRINCIPE
+    #PRINCIPE
     Linea(235, 255, 210, 225, relleno='azulAceroClaro')
     Linea(223, 255, 232, 242, relleno='azulAceroClaro')
     Rect(240, 240, 20, 40, relleno='rojo')

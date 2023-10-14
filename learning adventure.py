@@ -5,10 +5,6 @@ import seleccionDeActividades as select
 from seleccionDeActividades import botones
 import BatallaElecciones as pantallaElección
 from BatallaElecciones import *
-import Batalla_Final_Gana as gana
-import Batalla_Final_Pierde as pierde
-import InicioDelJuego
-import time
 
 rotuloPregunta = None
 
@@ -29,13 +25,13 @@ mates = [['Raíz cuadrada de 9', '3'],
         ['El único numero primo par', '2']
         ]
 
-general = [['¿Cuantos huesos tiene el cuerpo humano?', '206'], 
-            ['¿Cuanto acabó la segunda guerra mundial', '1945'], 
-            ['¿En que fecha se celebra la independencia en Colombia?', '20 de Julio'],
-            ['¿En que año se descubrió América?', '1492'],
-            ['¿Cual es el pais mas grande del mundo?', 'Rusia'],
-            ['¿Cual es el animal más grande del planeta?', 'Ballena azul'],
-            ['¿Cual es la capital de Colombia?', 'Bogotá']
+general = [['¿Cuantos huesos tiene\n el cuerpo humano?', '206'], 
+            ['¿Cuanto acabó la\n segunda guerra mundial', '1945'], 
+            ['¿En que fecha se celebra\n la independencia en Colombia?', '20 de Julio'],
+            ['¿En que año se\n descubrió América?', '1492'],
+            ['¿Cual es el pais mas\n grande del mundo?', 'Rusia'],
+            ['¿Cual es el animal más\n grande del planeta?', 'Ballena azul'],
+            ['¿Cual es la capital\n de Colombia?', 'Bogotá']
             ]
 
 opcionesIngles = [['Hosing', 'House', 'Tree'], 
@@ -49,7 +45,7 @@ opcionesMates = [['9', '3', 'No tiene'],
                  ['4', '2', '7'],
                  ['16', '70', '8'],
                  ['80', '60', '100'],
-                 ['24', '38', '12'],
+                 ['24', '38', '14'],
                  ['3', '180', '360'],
                  ['6', '2', '8']]
 
@@ -61,8 +57,6 @@ opcionesGeneral = [['365', '206', '50'],
                    ['Ballena azul', 'Elefante', 'Hormiga'],
                    ['Cali', 'Bogotá', 'Buenaventura']]
 
-BarraDelDragon = None
-BarraDelPrincipe = None
 pregunta = ''
 preguntasUsadas = []
 opciones = []
@@ -94,7 +88,7 @@ def obtenerPregunta(lista):
         respuesta = general[fila][1]
     
     #print(opciones,fila,pregunta)
-    rotuloPregunta = Label(pregunta, 90, 360, tamaño=10, negrito=True)
+    rotuloPregunta = Label(pregunta, 90, 350, tamaño=15, negrito=True)
     
     if pregunta in preguntasUsadas:
         pass
@@ -126,11 +120,11 @@ def comprobarVictoria(rJugador, r):
     if rJugador.lower() == r.lower():
         print("¡Correcto!")
         vidaDragon = vidaDragon - 5
-        BarraDelDragon.ancho -= 5
+        print(f"Atacaste al dragon, tiene {vidaDragon} de vida")
     else:
         print("Incorrecto")
         vidaJugador = vidaJugador - 5
-        BarraDelPrincipe.ancho -= 5
+        print(f"Te han atacado, tiene {vidaJugador} de vida")
 
 opcion = ''
 
@@ -160,17 +154,11 @@ def onMousePress(x, y):
             #print(materia)
             dibujarBatalla()
             respuesta = obtenerPregunta(materia)
-            BarraDelDragon = Rect(30, 85, 100, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
-            BarraDelPrincipe = Rect(205, 180, 90, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
             #print(opciones)
             opcionA = Rotulo(f"a) {opciones[0]}", 207, 302, relleno='grisPizarraOscuro', tamaño=20)
             opcionB = Rotulo(f"b) {opciones[1]}", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
             opcionC = Rotulo(f"c) {opciones[2]}", 207, 360, relleno='grisPizarraOscuro', tamaño=20)
             # obtenerOpciones()
-
-def onStep():
-    InicioDelJuego.iniciar()
-    time.sleep(5)
 
 if vidaDragon == 0:
     print("Tú ganas")
