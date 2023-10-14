@@ -7,19 +7,19 @@ botonGeneral = Group(
     Rect(21,240,120,40,relleno='gainsBoro',borde='marrónCuero'),
     Rotulo('Cultura general',80,260,tamaño=14)
 )
-botonGeneral.nombre = 'Cultura general'
+botonGeneral.nombre = 'cultura general'
 
 botonIngles = Group(
     Rect(170,240,60,40,relleno='gainsBoro',borde='marrónCuero'),
     Rotulo('Ingles',200,260,tamaño=14)
 )
-botonIngles.nombre = 'Ingles'
+botonIngles.nombre = 'ingles'
 
 botonMates = Group(
     Rect(260,240,110,40,relleno='gainsBoro',borde='marrónCuero'),
     Rotulo('Matematicas',315,260,tamaño=14)
 )
-botonMates.nombre = 'Matematicas'
+botonMates.nombre = 'matematicas'
 
 botones = Group(botonGeneral, botonIngles, botonMates)
 

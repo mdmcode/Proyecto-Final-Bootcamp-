@@ -4,8 +4,11 @@ import random
 import seleccionDeActividades as select
 from seleccionDeActividades import botones
 import BatallaElecciones as pantallaElección
+from BatallaElecciones import *
+import Batalla_Final_Gana as gana
+import Batalla_Final_Pierde as pierde
 
-rotuloPregunta = Label('', 90, 320, tamaño=20, negrito=True)
+rotuloPregunta = None
 
 ### Listas de preguntas ###
 ingles = [['Traduce: CASA', 'House'], 
@@ -55,39 +58,46 @@ opcionesGeneral = [['365', '206', '50'],
                    ['Ballena azul', 'Elefante', 'Hormiga'],
                    ['Cali', 'Bogotá', 'Buenaventura']]
 
+BarraDelDragon = None
+BarraDelPrincipe = None
 pregunta = ''
-preguntasUsadas = list()
-opciones = list()
+preguntasUsadas = []
+opciones = []
 respuesta = ''
 fila = 0
+print(len(ingles))
 
 # Toma un parametro con el nombre de la materia o conjunto de palabras
 def obtenerPregunta(lista):
-    global rotuloPregunta, pregunta, opciones, respuesta, fila
-    lista.lower()
+    global rotuloPregunta, pregunta, opciones, respuesta, fila, preguntasUsadas
+    print(lista)
     #Compara el parametro con las listas existentes
     if lista == 'ingles':
         #Obtiene un valor aleatorio de fila y toma una pregunta y su respuesta
-        fila = random.randint(0, len(ingles) - 1)
+        fila = rangoAleatorio(0, len(ingles))
         opciones = opcionesIngles[fila]
         pregunta = ingles[fila][0]     
         respuesta = ingles[fila][1]
+        print(opciones)
     elif lista == 'matematicas':
-        fila = random.randint(0, len(mates) - 1)
+        fila = rangoAleatorio(0, len(mates))
         opciones = opcionesMates[fila]
         pregunta = mates[fila][0]
         respuesta = mates[fila][1]
     elif lista == 'cultura general':
-        fila = random.randint(0, len(general) - 1)
+        fila = rangoAleatorio(0, len(general))
         opciones = opcionesGeneral[fila]
         pregunta = general[fila][0]     
         respuesta = general[fila][1]
     
-    rotuloPregunta.valor = pregunta
+    #print(opciones,fila,pregunta)
+    rotuloPregunta = Label(pregunta, 90, 360, tamaño=10, negrito=True)
+    
     if pregunta in preguntasUsadas:
         pass
     else:
-        print(pregunta)
+        pass
+        #print(pregunta)
     preguntasUsadas.append(pregunta)
 
     if lista == 'ingles':
@@ -103,45 +113,57 @@ vidaDragon = 100
 vidaJugador = 100
 
 def obtenerOpciones():
-    print('a)', opciones[0])
-    print('b)', opciones[1])
-    print('c)', opciones[2])
+    # global opcionA, opcionB, opcionC
+    opcionA.valor = 'a) ' + opciones[0]
+    opcionB.valor = 'b) ' + opciones[1]
+    opcionC.valor = 'c) ' + opciones[2]
 
 def comprobarVictoria(rJugador, r):
     global vidaJugador, vidaDragon
     if rJugador.lower() == r.lower():
         print("¡Correcto!")
         vidaDragon = vidaDragon - 5
+        BarraDelDragon.ancho -= 5
     else:
         print("Incorrecto")
         vidaJugador = vidaJugador - 5
+        BarraDelPrincipe.ancho -= 5
 
 opcion = ''
 
-def luchar(materia):
-    while vidaDragon > 0 and vidaJugador > 0:
-        for i in range(7):
-            respuesta = obtenerPregunta(materia)
-            obtenerOpciones()
-            respuestaJugador = opcion
-            comprobarVictoria(respuestaJugador, respuesta)
-
-            # print(f"El jugador tiene: {vidaJugador} de vida")
-            # print(f"El dragón tiene: {vidaDragon} de vida")
-
-def onMousePress(x, y):
-    for boton in botones:
-        if boton.toca(x, y):
-            luchar(boton.nombre)
-            pantallaElección.dibujarBatalla()
+materia = ''
+opcionA = None
+opcionB = None
+opcionC = None
 
 def onKeyPress(key):
+    global opcion
     if key == 'a':
         opcion = opciones[0]
+        comprobarVictoria(opcion, respuesta)
     elif key == 'b':
         opcion = opciones[1]
+        comprobarVictoria(opcion, respuesta)
     elif key == 'c':
         opcion = opciones[2]
+        comprobarVictoria(opcion, respuesta)
+
+
+def onMousePress(x, y):
+    global opcionA, opcionB, opcionC, rotuloPregunta
+    for boton in botones:
+        if boton.toca(x, y):
+            materia = boton.nombre
+            #print(materia)
+            dibujarBatalla()
+            respuesta = obtenerPregunta(materia)
+            BarraDelDragon = Rect(30, 85, 100, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
+            BarraDelPrincipe = Rect(205, 180, 90, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
+            #print(opciones)
+            opcionA = Rotulo(f"a) {opciones[0]}", 207, 302, relleno='grisPizarraOscuro', tamaño=20)
+            opcionB = Rotulo(f"b) {opciones[1]}", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
+            opcionC = Rotulo(f"c) {opciones[2]}", 207, 360, relleno='grisPizarraOscuro', tamaño=20)
+            # obtenerOpciones()
 
 if vidaDragon == 0:
     print("Tú ganas")

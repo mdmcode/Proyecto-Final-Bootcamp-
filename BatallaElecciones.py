@@ -29,9 +29,6 @@ def dibujarBatalla():
     #ELECCIONES
     Rect(0, 280, 400, 220, relleno='limónChifón', borde='plateado', anchuraDeBorde=5)
     Rotulo("Pregunta", 80, 305, relleno='grisPizarraOscuro', tamaño=20)
-    Rotulo("a)", 207, 302, relleno='grisPizarraOscuro', tamaño=20)
-    Rotulo("b)", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
-    Rotulo("c)", 207, 360, relleno='grisPizarraOscuro', tamaño=20)
 
     DragonMalo = Grupo(
         ##PATAS
@@ -134,8 +131,6 @@ def dibujarBatalla():
     Rect(325, 213, 30, 13, relleno='oro')
 
     #BARRAs DE VIDA
-    BarraDelDragon = Rect(30, 85, 100, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
-    BarraDelPrincipe = Rect(205, 180, 90, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
 
     #PRINCIPE
     Linea(235, 255, 210, 225, relleno='azulAceroClaro')
@@ -145,4 +140,3 @@ def dibujarBatalla():
     Linea(235, 213, 261, 213, anchuraDeLinea=20, guion=True, relleno='oro')
     Rect(235, 213, 30, 13, relleno='oro')
 
-# cmu_graphics.run()
