@@ -119,20 +119,21 @@ def dibujarBatalla():
     Poligono(216, 165, 190, 185, 220, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
     Poligono(144, 165, 170, 185, 140, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
     )
-DragonMalo.altura = 160
-DragonMalo.ancho = 160
-DragonMalo.centroX = 80
-DragonMalo.centroY = 190
+    
+    DragonMalo.altura = 160
+    DragonMalo.ancho = 160
+    DragonMalo.centroX = 80
+    DragonMalo.centroY = 190
 
-#PRINCESA
-Poligono(320, 280, 340, 240, 360, 280, relleno='violeta')
-Circulo(340, 230, 15, relleno='caqui')
-Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
-Rect(325, 213, 30, 13, relleno='oro')
+    #PRINCESA
+    Poligono(320, 280, 340, 240, 360, 280, relleno='violeta')
+    Circulo(340, 230, 15, relleno='caqui')
+    Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
+    Rect(325, 213, 30, 13, relleno='oro')
 
-    #BARRAs DE VIDA
+        #BARRAs DE VIDA
 
-    #PRINCIPE
+        #PRINCIPE
     Linea(235, 255, 210, 225, relleno='azulAceroClaro')
     Linea(223, 255, 232, 242, relleno='azulAceroClaro')
     Rect(240, 240, 20, 40, relleno='rojo')

@@ -7,6 +7,8 @@ import BatallaElecciones as pantallaElección
 from BatallaElecciones import *
 import Batalla_Final_Gana as gana
 import Batalla_Final_Pierde as pierde
+import InicioDelJuego
+import time
 
 rotuloPregunta = None
 
@@ -26,6 +28,7 @@ mates = [['Raíz cuadrada de 9', '3'],
         ['¿Cuantos angulos tiene un triangulo?', '3'],
         ['El único numero primo par', '2']
         ]
+
 general = [['¿Cuantos huesos tiene el cuerpo humano?', '206'], 
             ['¿Cuanto acabó la segunda guerra mundial', '1945'], 
             ['¿En que fecha se celebra la independencia en Colombia?', '20 de Julio'],
@@ -164,6 +167,10 @@ def onMousePress(x, y):
             opcionB = Rotulo(f"b) {opciones[1]}", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
             opcionC = Rotulo(f"c) {opciones[2]}", 207, 360, relleno='grisPizarraOscuro', tamaño=20)
             # obtenerOpciones()
+
+def onStep():
+    InicioDelJuego.iniciar()
+    time.sleep(5)
 
 if vidaDragon == 0:
     print("Tú ganas")
