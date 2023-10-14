@@ -1,12 +1,28 @@
 from cmu_graphics import *
 from cmu_graphics import cmu_graphics
+from cmu_graphics import onStepEvent
 
 historia = ['En una aldea muy lejana',
             'encuentra un gran castillo', 
             'en el cual vive una princesa',
+            'y su principe encantador',
+            'Todo era normal', 
+            'Hasta que un dragón llegó',
+            'Queriendo raptar a la princesa',
+            'El principe debe luchar',
+            'Por la vida de su amada',
+            'mediante una serie de',
+            'preguntas'
             ]
 
+rHistoria = Grupo()
+for i in range(len(historia)):
+    rHistoria.agregar(
+            Rótulo(historia[i], 270, 500 + 40 * i, tamaño=15)
+        )
+
 def iniciar():
+
     #FONDO CASTILLO
     Rect(0,0,400,400,relleno=gradiente('azulCieloClaro','azulAlica',inicio='superior'))
     Rect(0,320,400,320,relleno=gradiente('verde','verdeMilitar',inicio='inferior'))
@@ -51,4 +67,9 @@ def iniciar():
     )
 
 iniciar()
+
+def onStepEvent():
+    for rotulo in rHistoria:
+        rotulo.centroY -= 50
+
 cmu_graphics.run()
