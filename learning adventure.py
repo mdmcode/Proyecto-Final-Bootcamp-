@@ -62,6 +62,7 @@ preguntasUsadas = []
 opciones = []
 respuesta = ''
 fila = 0
+listaElegida = []
 print(len(ingles))
 
 # Toma un parametro con el nombre de la materia o conjunto de palabras
@@ -70,39 +71,25 @@ def obtenerPregunta(lista):
     print(lista)
     #Compara el parametro con las listas existentes
     if lista == 'ingles':
-        #Obtiene un valor aleatorio de fila y toma una pregunta y su respuesta
-        fila = rangoAleatorio(0, len(ingles))
+        #Define la lista elegida para usarla mas tarde
+        listaElegida = ingles
         opciones = opcionesIngles[fila]
-        pregunta = ingles[fila][0]     
-        respuesta = ingles[fila][1]
-        print(opciones)
     elif lista == 'matematicas':
-        fila = rangoAleatorio(0, len(mates))
+        listaElegida = mates
         opciones = opcionesMates[fila]
-        pregunta = mates[fila][0]
-        respuesta = mates[fila][1]
     elif lista == 'cultura general':
-        fila = rangoAleatorio(0, len(general))
+        listaElegida = general
         opciones = opcionesGeneral[fila]
-        pregunta = general[fila][0]     
-        respuesta = general[fila][1]
-    
-    #print(opciones,fila,pregunta)
-    rotuloPregunta = Label(pregunta, 90, 350, tamaño=15, negrito=True)
-    
-    if pregunta in preguntasUsadas:
-        pass
-    else:
-        pass
-        #print(pregunta)
-    preguntasUsadas.append(pregunta)
 
-    if lista == 'ingles':
-        ingles.remove(ingles[fila])
-    elif lista == 'matematicas':
-        mates[fila].remove(pregunta)
-    elif lista == 'cultura general':
-        general[fila].remove(pregunta)
+    listaElegida = listaElegida.random.sort()
+    # Dibuja un rotulo con la pregunta escogida
+    rotuloPregunta = Label(pregunta, 90, 350, tamaño=15, negrito=True)
+
+    pregunta = listaElegida[fila][0]
+    respuesta = listaElegida[fila][1]
+
+    listaElegida.remove(pregunta)
+    listaElegida.remove(respuesta)
 
     return respuesta
 
@@ -154,6 +141,7 @@ def onMousePress(x, y):
             #print(materia)
             dibujarBatalla()
             respuesta = obtenerPregunta(materia)
+            fila += 1
             #print(opciones)
             opcionA = Rotulo(f"a) {opciones[0]}", 207, 302, relleno='grisPizarraOscuro', tamaño=20)
             opcionB = Rotulo(f"b) {opciones[1]}", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
