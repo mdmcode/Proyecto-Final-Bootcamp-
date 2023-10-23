@@ -1,12 +1,4 @@
-from cmu_graphics import *
-from cmu_graphics import cmu_graphics
 import random
-import seleccionDeActividades as select
-from seleccionDeActividades import botones
-import BatallaElecciones as pantallaElección
-from BatallaElecciones import *
-
-rotuloPregunta = None
 
 ### Listas de preguntas ###
 ingles = [['Traduce: CASA', 'House'], 
@@ -63,44 +55,44 @@ opciones = []
 respuesta = ''
 fila = 0
 listaElegida = []
-print(len(ingles))
+preguntas = []
+respuestas = []
 
 # Toma un parametro con el nombre de la materia o conjunto de palabras
-def obtenerPregunta(lista):
-    global rotuloPregunta, pregunta, opciones, respuesta, fila, preguntasUsadas
-    print(lista)
+def obtenerLista(lista, listaE, listaOpciones):
+#   global pregunta, opciones, respuesta, fila, preguntasUsadas, listaElegida
     #Compara el parametro con las listas existentes
-    if lista == 'ingles':
+    if lista.lower() == 'ingles':
         #Define la lista elegida para usarla mas tarde
-        listaElegida = ingles
-        opciones = opcionesIngles[fila]
-    elif lista == 'matematicas':
-        listaElegida = mates
-        opciones = opcionesMates[fila]
-    elif lista == 'cultura general':
-        listaElegida = general
-        opciones = opcionesGeneral[fila]
+        listaE = ingles
+        listaOpciones = opcionesIngles[fila]
+    elif lista.lower() == 'matematicas':
+        listaE = mates
+        listaOpciones = opcionesMates[fila]
+    elif lista.lower() == 'cultura general':
+        listaE = general
+        listaOpciones = opcionesGeneral[fila]
 
-    listaElegida = listaElegida.random.sort()
-    # Dibuja un rotulo con la pregunta escogida
-    rotuloPregunta = Label(pregunta, 90, 350, tamaño=15, negrito=True)
+def obtenerPregunta(lista):
+    lista = lista.sort()
+    
+    # Establece la pregunta y su respectiva respuesta
+    for i in range(len(lista)):
+        preguntas.append(lista[i][0])
+        respuestas.append(lista[i][1])
 
-    pregunta = listaElegida[fila][0]
-    respuesta = listaElegida[fila][1]
+        lista.remove(pregunta)
+        lista.remove(respuesta)
 
-    listaElegida.remove(pregunta)
-    listaElegida.remove(respuesta)
-
-    return respuesta
+    # return respuesta
 
 vidaDragon = 100
 vidaJugador = 100
 
-def obtenerOpciones():
-    # global opcionA, opcionB, opcionC
-    opcionA.valor = 'a) ' + opciones[0]
-    opcionB.valor = 'b) ' + opciones[1]
-    opcionC.valor = 'c) ' + opciones[2]
+def obtenerOpciones(opciones):
+    letras = ['a) ', 'b) ', 'c)']
+    for i in range(len(opciones)):
+        print(f"{letras[i]} {opciones[i]}")
 
 def comprobarVictoria(rJugador, r):
     global vidaJugador, vidaDragon
@@ -114,43 +106,15 @@ def comprobarVictoria(rJugador, r):
         print(f"Te han atacado, tiene {vidaJugador} de vida")
 
 opcion = ''
+materia = input("¿Que materia desea escoger?\n Ingles\n Matematicas\n Cultura General\n")
 
-materia = ''
-opcionA = None
-opcionB = None
-opcionC = None
-
-def onKeyPress(key):
-    global opcion
-    if key == 'a':
-        opcion = opciones[0]
-        comprobarVictoria(opcion, respuesta)
-    elif key == 'b':
-        opcion = opciones[1]
-        comprobarVictoria(opcion, respuesta)
-    elif key == 'c':
-        opcion = opciones[2]
-        comprobarVictoria(opcion, respuesta)
-
-
-def onMousePress(x, y):
-    global opcionA, opcionB, opcionC, rotuloPregunta
-    for boton in botones:
-        if boton.toca(x, y):
-            materia = boton.nombre
-            #print(materia)
-            dibujarBatalla()
-            respuesta = obtenerPregunta(materia)
-            fila += 1
-            #print(opciones)
-            opcionA = Rotulo(f"a) {opciones[0]}", 207, 302, relleno='grisPizarraOscuro', tamaño=20)
-            opcionB = Rotulo(f"b) {opciones[1]}", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
-            opcionC = Rotulo(f"c) {opciones[2]}", 207, 360, relleno='grisPizarraOscuro', tamaño=20)
-            # obtenerOpciones()
+obtenerLista(materia, listaElegida, opciones)
+obtenerPregunta(listaElegida)
+obtenerOpciones(opciones)
+print(preguntas)
+print(respuestas)
 
 if vidaDragon == 0:
     print("Tú ganas")
 elif vidaJugador == 0:
     print("El dragón gana")
-
-cmu_graphics.run()
