@@ -59,18 +59,19 @@ preguntas = []
 respuestas = []
 
 # Toma un parametro con el nombre de la materia o conjunto de palabras
-def obtenerLista(lista, listaE, listaOpciones):
-#   global pregunta, opciones, respuesta, fila, preguntasUsadas, listaElegida
+def obtenerLista(lista, indicada, listaOpciones):
     #Compara el parametro con las listas existentes
+    list(indicada)
+    list(listaOpciones)
     if lista.lower() == 'ingles':
         #Define la lista elegida para usarla mas tarde
-        listaE = ingles
+        indicada = ingles
         listaOpciones = opcionesIngles[fila]
     elif lista.lower() == 'matematicas':
-        listaE = mates
+        indicada = mates
         listaOpciones = opcionesMates[fila]
     elif lista.lower() == 'cultura general':
-        listaE = general
+        indicada = general
         listaOpciones = opcionesGeneral[fila]
 
 def obtenerPregunta(lista):
