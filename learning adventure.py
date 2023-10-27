@@ -2,8 +2,6 @@ import random
 import json
 
 pregunta = ''
-preguntasUsadas = []
-opciones = []
 respuesta = ''
 fila = 0
 listaElegida = []
