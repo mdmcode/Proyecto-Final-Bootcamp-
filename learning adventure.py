@@ -10,19 +10,6 @@ def cargarArchivo(nombre):
     with open(nombre, "r") as archivo:
         preguntas = json.load(archivo)
 
-def obtenerPregunta(lista):
-    lista = lista.sort()
-    
-    # Establece la pregunta y su respectiva respuesta
-    for pregunta in range(len(lista)):
-        preguntas.append(lista[pregunta][0])
-        respuestas.append(lista[pregunta][1])
-
-        lista.remove(pregunta)
-        lista.remove(respuesta)
-
-    # return respuesta
-
 vidaDragon = 100
 vidaJugador = 100
 gana = False
