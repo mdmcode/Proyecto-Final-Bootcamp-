@@ -1,0 +1,51 @@
+{
+    "1": {
+        "pregunta": "¿Cuantos huesos tiene\n el cuerpo humano?"  ,
+        "opciones": ["365", "206", "50"],
+        "respuesta": "b",
+        "info": "El cuerpo humano adulto tiene 206 huesos",
+        "respuestaJugador": "None"
+    },
+    "2": {
+        "pregunta": "¿Cuanto acabó la\n segunda guerra mundial",
+        "opciones": ["2004", "1845", "1945"],
+        "respuesta": "c",
+        "info": "La WW2 terminó en 1945",
+        "respuestaJugador": "None"
+    },
+    "3": {
+        "pregunta": "¿En que fecha se celebra\n la independencia en Colombia?",
+        "opciones": ["7 de agosto", "1 de Enero", "20 de julio"],
+        "respuesta": "c",
+        "info": "La guerra de independencia empezó el 20 de julio",
+        "respuestaJugador": "None"
+    },
+    "4": {
+        "pregunta": "¿En que año se\n descubrió América?",
+        "opciones": ["1492", "1955", "2018"],
+        "respuesta": "a",
+        "info": "Colón llegó en 1492",
+        "respuestaJugador": "None"
+    },
+    "5": {
+        "pregunta": "¿Cual es el pais mas\n grande del mundo?",
+        "opciones": ["China", "Rusia", "Colombia"],
+        "respuesta": "b",
+        "info": "Rusia tiene una superficie de 17'125.191 km",
+        "respuestaJugador": "None"
+    },
+    "6": {
+        "pregunta": "¿Cual es el animal más\n grande del planeta?",
+        "opciones": ["Ballena azul", "Elefante", "Hormiga"],
+        "respuesta": "b",
+        "info": "Es la ballena azul",
+        "respuestaJugador": "None"
+    },
+    "7": {
+        "pregunta": "¿Cual es la capital\n de Colombia?",
+        "opciones": ["Cali", "Bogotá", "Buenaventura"],
+        "respuesta": "b",
+        "info": "Es Santa Fé De Bogotá",
+        "respuestaJugador": "None"
+    }
+}

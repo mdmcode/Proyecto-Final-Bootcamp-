@@ -1,0 +1,57 @@
+{
+    "1": {
+        "pregunta": "Raíz cuadrada de 9",
+        "opciones": [
+            "9", "3", "No tiene"
+        ],
+        "respuesta": "b",
+        "info": "3 * 3 = 9",
+        "respuestaJugador": "None"
+    },
+    "2": {
+        "pregunta": "2 + 2",
+        "opciones": [
+            "4", "2", "7"
+        ],
+        "respuesta": "a",
+        "info": "2 + 2 = 4",
+        "respuestaJugador": "None"
+    },
+    "3": {
+        "pregunta": "2 X 4",
+        "opciones": [
+            "16", "70", "8"
+        ],
+        "respuesta": "c",
+        "info": "2 + 2 + 2 + 2 = 8",
+        "respuestaJugador": "None"
+    },
+    "4": {
+        "pregunta":"¿Cuantos segundos hay en un minuto?",
+        "opciones":["80", "60", "100"],
+        "respuesta": "b",
+        "info": "En un minuto hay 60 segundos",
+        "respuestaJugador": "None"
+    },
+    "5": {
+        "pregunta": "2 X 2 + 10",
+        "opciones": ["24", "38", "14"],
+        "respuesta": "c",
+        "info": "2 X 2 = 4; 4 + 10 = 14",
+        "respuestaJugador": "None"
+    },
+    "6": {
+        "pregunta":"¿Cuantos angulos tiene un triangulo?",
+        "opciones":["3", "180", "360"],
+        "respuesta": "a",
+        "info": "Un triangulo tiene 3 angulos",
+        "respuestaJugador": "None"
+    },
+    "7": {
+        "pregunta":"El único numero primo par",
+        "opciones":["6", "2", "8"],
+        "respuesta": "b",
+        "info": "El numero dos tiene dos divisores",
+        "respuestaJugador": "None"
+    }
+}
