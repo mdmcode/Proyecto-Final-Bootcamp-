@@ -1,10 +1,7 @@
 import random
 import json
 
-pregunta = ''
-respuesta = ''
-fila = 0
-listaElegida = []
+materias = ['ingles', 'matematicas', 'cultura general', 'lenguaje']
 preguntas = []
 respuestas = []
 
