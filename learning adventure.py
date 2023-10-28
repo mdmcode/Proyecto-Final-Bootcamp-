@@ -1,18 +1,25 @@
-import random
 import json
 
-materias = ['ingles', 'matematicas', 'cultura general', 'lenguaje']
+materias = ['ingles', 'matematicas', 'cultura general']
 preguntas = []
 respuestas = []
 
 def cargarArchivo(nombre):
     global preguntas
-    with open(nombre, "r") as archivo:
+    with open(nombre, "r", encoding="utf-8") as archivo:
         preguntas = json.load(archivo)
 
 vidaDragon = 100
 vidaJugador = 100
 gana = False
+
+def obtenerMaterias():
+    texto = f"¿Que materia desea escoger?"
+    for m in materias:
+        texto += f"\n {m}"
+
+    texto += '\n'
+    return texto
 
 def obtenerOpciones(opciones):
     letras = ['a) ', 'b) ', 'c)']
@@ -33,7 +40,7 @@ def comprobarVictoria(rJugador, r):
         return False
 
 def play():
-    materia = input("¿Que materia desea escoger?\n Ingles\n Matematicas\n Cultura General\n")
+    materia = input(obtenerMaterias())
     cargarArchivo('materias/' + materia + '.json')
     for pregunta in preguntas:
         print(preguntas[str(pregunta)]["pregunta"])
@@ -43,6 +50,7 @@ def play():
         if gana == False:
             print(preguntas[str(pregunta)]["info"])
 
+    materias.remove(materia)
     if vidaDragon > vidaJugador:
         print("Has perdido")
     elif vidaJugador > vidaDragon:
@@ -50,4 +58,5 @@ def play():
     else:
         play()
 
-play()
+while len(materias) > 0:
+    play()
