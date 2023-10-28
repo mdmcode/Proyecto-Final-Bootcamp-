@@ -34,7 +34,7 @@ def comprobarVictoria(rJugador, r):
 
 def play():
     materia = input("¿Que materia desea escoger?\n Ingles\n Matematicas\n Cultura General\n")
-    cargarArchivo('materias/' + materia + '.json')
+    cargarArchivo('materias/' + materia.lower() + '.json')
     for pregunta in preguntas:
         print(preguntas[str(pregunta)]["pregunta"])
         obtenerOpciones(preguntas[str(pregunta)]["opciones"])
