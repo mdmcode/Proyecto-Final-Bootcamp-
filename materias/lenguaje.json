@@ -1,0 +1,92 @@
+{
+    "1":{
+        "pregunta": "Cuál es el antónimo de quietud?",
+        "opciones": [
+            "Paz",
+            "Movimiento",
+            "Guerra"
+        ],
+        "respuesta": "b",
+        "info": "El contrario es Movimiento"
+    },
+    "2":{
+        "pregunta": "¿Quien escribió el Quijote?",
+        "opciones": [
+            "Miguel Saavedra",
+            "Homero",
+            "Jorge Isaac"
+        ],
+        "respuesta": "a",
+        "info": "El autor es Miguel De Cervantes Saavedra"
+    },
+    "3":{
+        "pregunta": "El ____ se me enfrió",
+        "opciones": [
+            "Cafe",
+            "Limonada",
+            "Té"
+        ],
+        "respuesta": "c",
+        "info": "Café lleva tilde, ergo la respuesta es Té"
+    },
+    "4":{
+        "pregunta": "El que crea y transmite el mensaje es el:",
+        "opciones": [
+            "Referente",
+            "Emisor",
+            "Receptor"
+        ],
+        "respuesta": "b",
+        "info": "Es el emisor"
+    },
+    "5":{
+        "pregunta": "'El' es:",
+        "opciones": [
+            "Artículo",
+            "Sujeto",
+            "Pronombre"
+        ],
+        "respuesta": "a",
+        "info": "'El' sin tilde es un artículo"
+    },
+    "6":{
+        "pregunta": "¿Cual es la manera correcta de denominar a nuestro idioma",
+        "opciones": [
+            "Castellano",
+            "Español",
+            "Ambos"
+        ],
+        "respuesta": "c",
+        "info": "Ambos son aceptados"
+    },
+    "7":{
+        "pregunta": "¿Cual es la correcta?",
+        "opciones": [
+            "Hervir",
+            "Herbir",
+            "Ninguna de las anteriores"
+        ],
+        "respuesta": "a",
+        "info": "La correcta es hervir"
+    },
+    "8": {
+        "pregunta": "¿Que palabra contiene un diptongo?",
+        "opciones": [
+            "Puerta", 
+            "Ruiseñor", 
+            "Lapiz"
+        ],
+        "respuesta": "b",
+        "info": "Un diptongo es una silaba que contiene dos vocales juntas, como en Ruiseñor"
+    },
+    "9": {
+        "pregunta": "¿Que palabra contiene un diptongo?",
+        "opciones": [
+            "Puerta", 
+            "Ruiseñor", 
+            "Lapiz"
+        ],
+        "respuesta": "b",
+        "info": "Un diptonogo es una silaba que contiene dos vocales juntas, como en Ruiseñor"
+    }
+}

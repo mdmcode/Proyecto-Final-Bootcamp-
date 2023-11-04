@@ -3,42 +3,36 @@
         "pregunta":"Traduce: CASA",
         "opciones": ["Hosing", "House", "Tree"],
         "respuesta": "b",
-        "info": "La respuesta es House",
-        "respuestaJugador": "None"
+        "info": "La respuesta es House"
     },
     "2":{
         "pregunta": "Traduce: CARRO",
         "opciones": ["Audi", "Wheel", "Car"],
         "respuesta": "c",
-        "info": "La respuesta es Car",
-        "respuestaJugador": "None"
+        "info": "La respuesta es Car"
     },
     "3":{
         "pregunta": "Traduce: MADRE",
         "opciones": ["Mom", "Mami", "Nana"],
         "respuesta": "a",
-        "info": "La respuesta es Mom",
-        "respuestaJugador": "None"
+        "info": "La respuesta es Mom"
     },
     "4":{
         "pregunta": "Traduce: MANZANA",
         "opciones": ["Apple", "Mango", "Apol"],
         "respuesta": "a",
-        "info": "La respuesta es Apple",
-        "respuestaJugador": "None"
+        "info": "La respuesta es Apple"
     },
     "5":{
         "pregunta": "Traduce: HABITACIÓN",
         "opciones": ["Habitation", "Room", "Living"],
         "respuesta": "b",
-        "info": "La respuesta es Room",
-        "respuestaJugador": "None"
+        "info": "La respuesta es Room"
     },
     "6":{
         "pregunta": "Traduce: AZÚCAR",
         "opciones": ["Sweet", "Sour", "Sugar"],
         "respuesta": "b",
-        "info": "La respuesta es Sugar",
-        "respuestaJugador": "None"
+        "info": "La respuesta es Sugar"
     }
 }

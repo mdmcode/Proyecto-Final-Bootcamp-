@@ -143,6 +143,3 @@ def dibujarDerrota():
 
     #GAME OVER
     Rotulo("¡¡GAME OVER!!", 275, 60, relleno=gradiente('rojoNaranja','rojo', 'rojoOscuro'), tamaño=30, fuente="monospace")
-
-dibujarDerrota()
-cmu_graphics.run()

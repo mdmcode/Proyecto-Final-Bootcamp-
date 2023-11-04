@@ -1,34 +1,42 @@
 from cmu_graphics import *
 from cmu_graphics import cmu_graphics
-from cmu_graphics import onStepEvent
+from cmu_graphics import onSteps
 
-historia = ['En una aldea muy lejana',
+iniciado = False
+app.pasosPorSegundo = 50
+
+historia = ['En un lugar muy lejano se',
             'encuentra un gran castillo', 
             'en el cual vive una princesa',
             'y su principe encantador',
+            '',
             'Todo era normal', 
             'Hasta que un dragón llegó',
             'Queriendo raptar a la princesa',
+            '',
             'El principe debe luchar',
-            'Por la vida de su amada',
+            'por la vida de su amada',
             'mediante una serie de',
             'preguntas'
             ]
 
-rHistoria = Grupo()
+rHistoria = Group()
 for i in range(len(historia)):
     rHistoria.agregar(
-            Rótulo(historia[i], 270, 500 + 40 * i, tamaño=15)
+            Label(historia[i], 200, 500 + 40 * i, tamaño=20, negrito=True)
         )
 
+castillo = Group()
+
 def iniciar():
+    global iniciado, castillo
 
     #FONDO CASTILLO
     Rect(0,0,400,400,relleno=gradiente('azulCieloClaro','azulAlica',inicio='superior'))
     Rect(0,320,400,320,relleno=gradiente('verde','verdeMilitar',inicio='inferior'))
     #CASTILLO
 
-    castillo=Grupo(
+    castillo=Group(
         Rect(0,160,50,170,relleno=gradiente('grisOscuro','grisTurbio',inicio='izquierda')),
         Rect(110,160,35,170,relleno=gradiente('grisOscuro','grisTurbio',inicio='izquierda')),
         Rect(135,200,50,130,relleno=gradiente('grisOscuro','grisTurbio',inicio='izquierda')),
@@ -65,11 +73,13 @@ def iniciar():
         Circulo(220,270,15,relleno='caqui')
         
     )
+    
+    iniciado = True
+    rHistoria.alFrente()
 
-iniciar()
+def enPaso():
+    if castillo.centroX > 40:
+        castillo.centroX -= 2
 
-def onStepEvent():
-    for rotulo in rHistoria:
-        rotulo.centroY -= 50
-
-cmu_graphics.run()
+    if iniciado == True:
+        rHistoria.centroY -= 1
