@@ -3,7 +3,7 @@ from cmu_graphics import cmu_graphics
 
 def dibujarBatalla():
     app.fondo = gradiente('índigo', 'azulPizarraOscuro', 'azulMedianoche', inicio='inferior')
-
+    
     #LUNA
     Luna = Grupo(
         Círculo(50, 100, 30, relleno=gradiente('negro', 'gris', inicio='izquierda')),
@@ -133,108 +133,22 @@ def dibujarBatalla():
     Dragon.ancho= 210
     Dragon.centroX = 100
     Dragon.centroY = 200
-    
     #PRINCESA
-    Princesa=Grupo(
-             #vestido   
-            Rect(180,140,40,60,fill='caqui'),
-            Ovalo(220,190,8,35,fill='rosadoClaro',rotarAngulo=-45),
-            Ovalo(182,190,8,35,fill='rosadoClaro',rotarAngulo=45),
-            Ovalo(232,203,5,10,fill='marronArenoso',rotarAngulo=-45),
-            Ovalo(170,203,5,10,fill='marronArenoso',rotarAngulo=45),
-            Arc(200,200,200,200,140,80,fill='rosadoClaro'),
-            Ovalo(234,239,20,96,fill='rosadoClaro',rotarAngulo=-40),
-            Ovalo(168,239,20,96,fill='rosadoClaro',rotarAngulo=40),
-            # Detalles
-            Poligono(172,202,156,250,158,287,170,250,fill='rojoVioletaPalido',rotarAngulo=25),
-            Poligono(200,218,190,250,200,300,210,250,fill='rojoVioletaPalido'),
-            Poligono(231,200,232,250,244,286,246,250,fill='rojoVioletaPalido',rotarAngulo=-25),
-            #corsel
-            Poligono(200,220,215,209,215,180,185,180,185,209,fill='rojoVioletaPalido'),
-            Ovalo(208,180,30,10,fill='white',rotarAngulo=15),
-            Ovalo(192,180,30,10,fill='white',rotarAngulo=-15),
-            Ovalo(200,179,33,8,fill='marronArenoso'),
-            Line(200,165,200,180,fill='marronArenoso',anchuraDeLinea=10),
-            Ovalo(200,183,7,10,fill='rosadoProfundo'),
-            Star(202,181,4,4,fill='blanco'),
-            Circle(200,151,15,fill='marronArenoso'),
-            Ovalo(208,139,10,25,fill='caqui',rotarAngulo=-80),
-            Ovalo(193,139,10,25,fill='caqui',rotarAngulo=80),
-            #cara
-            Line(198,146,192,150),
-            Line(209,150,203,146),
-            Ovalo(197,152,3,5),
-            Ovalo(205,152,3,5),
-            Ovalo(201,160,4,7),
-            #corona
-            Poligono(180,138,200,120,220,138,fill=gradiente('varillaDorada','varillaDoradaOScura')),
-            Line(200,120,200,138,fill='varillaDoradaOscura'),
-            Circle(208,128,5,fill='azulPizarraOscuro'),
-            Circle(192,128,5,fill='azulPizarraOscuro'),
-            Ovalo(200,120,7,10,fill='rosadoProfundo'),
-            Star(201,116,4,4,fill='blanco')
-            )
-    Princesa.centroX=360
-    Princesa.centroY=220
-    Princesa.altura=100
-    Princesa.ancho=85
+    Poligono(320, 280, 340, 240, 360, 280, relleno='violeta')
+    Circulo(340, 230, 15, relleno='caqui')
+    Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
+    Rect(325, 213, 30, 13, relleno='oro')
     
     #BARRAS DE VIDA
     BarraDelDragon = Rect(30, 85, 100, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
     BarraDelPrincipe = Rect(205, 180, 90, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
     
-    #JAULA
-    Rect(290,180,110,100,relleno=None,borde='plateado',anchuraDeBorde=5)
-    Linea(320,180,320,280,relleno='plateado',anchuraDeLinea=5)
-    Linea(370,180,370,280,relleno='plateado',anchuraDeLinea=5)
-    Linea(345,180,345,280,relleno='plateado',anchuraDeLinea=5)
-    
     #PRINCIPE
-    Principe=Grupo(
-                #brazos
-                Ovalo(230,220,10,50,fill='white',rotarAngulo=-45),
-                Ovalo(248,235,12,7,fill='marronArenoso'),
-                Ovalo(166,230,10,50,fill='white',rotarAngulo=10),
-                Ovalo(162,253,7,12,fill='marronArenoso'),
-                #patas
-                Linea(180,280,180,335,fill='white',anchuraDeLinea=18),
-                Linea(210,280,210,335,fill='white',anchuraDeLinea=18),
-                #torso
-                Poligono(168,282,222,282,220,205,170,205,fill='white'),
-                Linea(168,266,222,266,fill='rojo',anchuraDeLinea=10),
-                Poligono(171,205,167,215,223,215,219,205,fill='gold'),
-                Ovalo(195,205,50,10,fill='gold'),
-                Linea(173,205,171,215),
-                Linea(178,205,176,215),
-                Linea(183,205,181,215),
-                Linea(188,205,186,215),
-                Linea(201,205,203,215),
-                Linea(206,205,208,215),
-                Linea(211,205,213,215),
-                Linea(216,205,218,215),
-                Linea(195,193,195,215,fill='white',anchuraDeLinea=10),
-                Ovalo(195,205,8,12,fill='rojo'),
-                Star(196,203,4,4,fill='blanco'),
-                Circulo(195,181,15,fill='marronArenoso'),
-                #pelo
-                Ovalo(205,167,10,25,fill='marronCuero',rotarAngulo=-80),
-                Ovalo(185,167,10,25,fill='marrónCuero',rotarAngulo=80),
-                #cara
-                Linea(192,173,183,176),
-                Linea(198,173,208,176),
-                Ovalo(190,180,3,5),
-                Ovalo(200,180,3,5),
-                Ovalo(195,190,4,7),
-                #corona
-                Poligono(170,168,195,140,220,168,fill=gradiente('varillaDorada','varillaDoradaOScura')),
-                Linea(195,140,195,170,fill='varillaDoradaOscura'),
-                Circulo(207,154,6,fill='azulPizarraOscuro'),
-                Circulo(183,154,6,fill='azulPizarraOscuro'),
-                Ovalo(195,140,9,11,fill='rojo'),
-                Star(197,136,4,4,fill='blanco')
-                )
-    Principe.centroX=260
-    Principe.centroY=240
-    Principe.altura=90
-    Principe.ancho=55
+    Linea(235, 255, 210, 225, relleno='azulAceroClaro')
+    Linea(223, 255, 232, 242, relleno='azulAceroClaro')
+    Rect(240, 240, 20, 40, relleno='rojo')
+    Circulo(250, 225, 15, relleno='caqui')
+    Linea(235, 213, 261, 213, anchuraDeLinea=20, guion=True, relleno='oro')
+    Rect(235, 213, 30, 13, relleno='oro')
+
 
